@@ -1,6 +1,10 @@
 # Understanding k-mers and ploidy using Smudgeplot
 
-This session is part of [**Biodiversity Genomics Academy 2023**](https://BGA23.org)
+#BGA24/sessions #GitPod #Tools #Kmers
+
+This session is part of [**Biodiversity Genomics Academy 2024**](https://thebgacademy.org)
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/thebgacademy/smudgeplot) 
 
 ## Session Leader(s)
 
