@@ -4,9 +4,6 @@ image: condaforge/mambaforge:24.7.1-0
 tasks:
 - name: install mamba
   init: |
-    cd /workspace
-
-    source ${HOME}/.bashrc
     mamba create -n smudgeplot -c conda-forge r-base r-argparse r-viridis -y
     gp sync-done bundle
     
@@ -15,8 +12,8 @@ tasks:
   command: |
     cd /workspace
     mamba init bash
+    source ~/.bashrc 
     mamba activate smudgeplot
-    /workspace/mambaforge/bin/pip3 install click ruff
 
 vscode:
   extensions:
