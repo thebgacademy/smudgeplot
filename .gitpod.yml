@@ -1,9 +1,15 @@
-image: condaforge/mambaforge:24.7.1-0
-# image: gitpod/workspace-base
+image: gitpod/workspace-base
+# image: condaforge/mambaforge:24.7.1-0
 
 tasks:
 - name: install mamba
   init: |
+    cd /workspace
+    wget "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
+    bash Mambaforge-$(uname)-$(uname -m).sh -b -p /workspace/mambaforge && rm Mambaforge-$(uname)-$(uname -m).sh
+
+    /workspace/mambaforge/bin/mamba init bash
+    source ${HOME}/.bashrc
     mamba create -n smudgeplot -c conda-forge r-base r-argparse r-viridis -y
     gp sync-done bundle
     
