@@ -11,15 +11,30 @@ tasks:
     /workspace/mambaforge/bin/mamba init bash
     source ${HOME}/.bashrc
     mamba create -n smudgeplot -c conda-forge r-base r-argparse r-viridis -y
+    mamba activate smudgeplot
+    pip3 install numpy pandas
+
+    cd /workspace
+    mkdir src bin && cd src # create directories for source code & binaries
+    git clone -b sploidyplot https://github.com/KamilSJaron/smudgeplot
+    git clone https://github.com/thegenemyers/FastK
+
+    cd smudgeplot
+    make -s INSTALL_PREFIX=/workspace
+    cd ../FastK && make
+    install -c FastK Fastrm Fastmv Fastcp Fastmerge Histex Tabex Profex Logex Vennex Symmex Haplex Homex Fastcat /workspace/bin/
+    
     gp sync-done bundle
     
 - name: activate mamba
   init: gp sync-await bundle # Wait for previous 'inits' to complete
   command: |
     cd /workspace
-    mamba init bash
+    /workspace/mambaforge/bin/mamba init bash
     source ~/.bashrc 
     mamba activate smudgeplot
+    
+    export PATH=/workspace/bin:"$PATH"
 
 vscode:
   extensions:

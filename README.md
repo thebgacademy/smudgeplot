@@ -55,7 +55,6 @@ Now smudgeplot make install smudgeplot R package, compiles the C kernel for sear
 ```
 cd smudgeplot
 make -s INSTALL_PREFIX=/workspace
-R -e 'install.packages(".", repos = NULL, type="source")' # install the R package
 cd ..
 smudgeplot.py -h # test the installation worked out nice
 cd FastK && make
