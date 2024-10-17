@@ -23,6 +23,8 @@ tasks:
     make -s INSTALL_PREFIX=/workspace
     cd ../FastK && make
     install -c FastK Fastrm Fastmv Fastcp Fastmerge Histex Tabex Profex Logex Vennex Symmex Haplex Homex Fastcat /workspace/bin/
+
+    mkdir -p smudgeplot/data/Scer && cd smudgeplot/data/Scer && wget -P data https://sk13.cog.sanger.ac.uk/SRR3265401_{1,2}.fastq.gz
     
     gp sync-done bundle
     
