@@ -12,6 +12,8 @@ Kamil S. Jaron; Amjad Khalaf
 
 Tree of Life, Wellcome Sanger Institute
 
+[Google slides](https://docs.google.com/presentation/d/10g_TTIYl-v_F9jzZrKu5w7aTJs7tNWjHoL-6pr9NSjA/edit?usp=sharing)
+
 ## Description
 
 By the end of this session you will be able to:
